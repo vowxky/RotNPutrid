@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_putrid_netherite_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rotnputrid:putrid_netherite_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_putrid_upgrade_template": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "rotnputrid:putrid_upgrade_template"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "rotnputrid:rotten_greatsword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_putrid_netherite_ingot",
+      "has_putrid_upgrade_template",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "rotnputrid:rotten_greatsword"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,0 +1,32 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "item/generated",
+	"textures": {
+		"layer0": "rotnputrid:item/rotten_greatsword_alt"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-46.5, -90, 0],
+			"translation": [0, 14.25, -0.25],
+			"scale": [2, 2, 1]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -55],
+			"translation": [0, 16.25, -0.25],
+			"scale": [2, 2, 0.85]
+		},
+		"firstperson_righthand": {
+			"rotation": [-20, -90, 10],
+			"translation": [1.13, 5.2, -0.26],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-20, -90, -80],
+			"translation": [1.13, 5.2, -0.26],
+			"scale": [1.36, 1.36, 0.68]
+		},
+		"gui": {
+			"scale": [1.1, 1.1, 1.1]
+		}
+	}
+}

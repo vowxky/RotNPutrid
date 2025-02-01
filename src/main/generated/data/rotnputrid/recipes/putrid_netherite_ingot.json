@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:netherite_ingot"
+    },
+    {
+      "item": "rotnputrid:rot_bottle"
+    }
+  ],
+  "result": {
+    "item": "rotnputrid:putrid_netherite_ingot"
+  }
+}
