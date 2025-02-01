@@ -23,6 +23,7 @@ public class RotnputridItemGroup {
                         entries.add(RotnputridItems.PUTRID_NETHERITE_INGOT);
                         entries.add(RotnputridItems.PUTRID_UPGRADE_TEMPLATE);
                         entries.add(RotnputridItems.ROT_BOTTLE);
+                        entries.add(RotnputridBlocks.ROTTEN_TUMOUR.asItem());
                     }).build());
 
 

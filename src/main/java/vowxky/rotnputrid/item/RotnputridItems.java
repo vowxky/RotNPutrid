@@ -16,7 +16,7 @@ public class RotnputridItems {
     public static final Item ROTTEN_GREATSWORD = registerItem("rotten_greatsword",
             new RottenGreatSword(
                     RottenToolMaterial.INSTANCE,
-                    6,
+                    5,
                     -2.8f,
                     new FabricItemSettings().maxCount(1).fireproof()
     ));

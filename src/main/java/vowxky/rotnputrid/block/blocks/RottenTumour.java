@@ -18,9 +18,11 @@ import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
 import vowxky.rotnputrid.block.entity.RottenTumourBlockEntity;
 import vowxky.rotnputrid.effect.RotnputridEffects;
+import vowxky.rotnputrid.util.RottenTumourUtils;
 import vowxky.rotnputrid.util.Util;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 /**
@@ -30,14 +32,6 @@ import java.util.UUID;
 
 public class RottenTumour extends BlockWithEntity implements BlockEntityProvider {
 
-    private static final int DURATION_IRON = 2400;
-    private static final int DURATION_COPPER = 400;
-    private static final int DURATION_NETHERITE = 36000;
-
-    private static final int RANGE_IRON = 5;
-    private static final int RANGE_COPPER = 10;
-    private static final int RANGE_NETHERITE = 20;
-
     public RottenTumour(Settings settings) {
         super(settings);
     }
@@ -45,11 +39,6 @@ public class RottenTumour extends BlockWithEntity implements BlockEntityProvider
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return Util.isValidBlock(world.getBlockState(pos.down()).getBlock());
-    }
-
-    @Override
-    public boolean hasRandomTicks(BlockState state) {
-        return true;
     }
 
     @Override
@@ -72,7 +61,7 @@ public class RottenTumour extends BlockWithEntity implements BlockEntityProvider
         if (!world.isClient() && world instanceof ServerWorld serverWorld) {
             RottenTumourBlockEntity blockEntity = (RottenTumourBlockEntity) serverWorld.getBlockEntity(pos);
             if (blockEntity != null) {
-                blockEntity.setDecayTime(getDecayTime(world.getBlockState(pos.down()).getBlock()));
+                blockEntity.setDecayTime(getRottenTime(world.getBlockState(pos.down()).getBlock()));
             }
         }
     }
@@ -89,37 +78,31 @@ public class RottenTumour extends BlockWithEntity implements BlockEntityProvider
     }
 
     private void applyDecayInRange(ServerWorld world, BlockPos pos) {
-        int range = getDecayRange(world.getBlockState(pos.down()).getBlock());
-        List<LivingEntity> entities = world.getEntitiesByClass(
-                LivingEntity.class,
-                new Box(pos.add(-range, -range, -range), pos.add(range, range, range)),
-                entity -> entity.hasStatusEffect(RotnputridEffects.ROT_EFFECT)
-        );
+        int range = getRottenRange(world.getBlockState(pos.down()).getBlock());
 
-        for (LivingEntity entity : entities) {
-            StatusEffectInstance rotEffect = entity.getStatusEffect(RotnputridEffects.ROT_EFFECT);
-            StatusEffectInstance decayEffect = entity.getStatusEffect(RotnputridEffects.DECAY_EFFECT);
-
-            if (rotEffect != null && decayEffect == null) {
-                int decayDuration = rotEffect.getDuration() * 2;
-                entity.removeStatusEffect(RotnputridEffects.ROT_EFFECT);
-                entity.addStatusEffect(new StatusEffectInstance(RotnputridEffects.DECAY_EFFECT, decayDuration, 0));
-            }
-        }
+        world.getEntitiesByClass(LivingEntity.class,
+                        new Box(pos.add(-range, -range, -range), pos.add(range, range, range)),
+                        entity -> entity.hasStatusEffect(RotnputridEffects.ROT_EFFECT))
+                .stream()
+                .filter(entity -> {
+                    StatusEffectInstance rotEffect = entity.getStatusEffect(RotnputridEffects.ROT_EFFECT);
+                    return rotEffect != null && entity.getStatusEffect(RotnputridEffects.DECAY_EFFECT) == null;
+                })
+                .forEach(entity -> {
+                    int decayDuration = Optional.ofNullable(entity.getStatusEffect(RotnputridEffects.ROT_EFFECT))
+                            .map(StatusEffectInstance::getDuration)
+                            .orElse(0) * 2;
+                    entity.removeStatusEffect(RotnputridEffects.ROT_EFFECT);
+                    entity.addStatusEffect(new StatusEffectInstance(RotnputridEffects.DECAY_EFFECT, decayDuration, 0));
+                });
     }
 
-    private int getDecayRange(Block blockBelow) {
-        if (blockBelow == Blocks.IRON_BLOCK) return RANGE_IRON;
-        if (blockBelow == Blocks.COPPER_BLOCK) return RANGE_COPPER;
-        if (blockBelow == Blocks.NETHERITE_BLOCK) return RANGE_NETHERITE;
-        return 0;
+    private int getRottenRange(Block blockBelow) {
+        return RottenTumourUtils.getRottenRange(blockBelow);
     }
 
-    private int getDecayTime(Block blockBelow) {
-        if (blockBelow == Blocks.IRON_BLOCK) return DURATION_IRON;
-        if (blockBelow == Blocks.COPPER_BLOCK) return DURATION_COPPER;
-        if (blockBelow == Blocks.NETHERITE_BLOCK) return DURATION_NETHERITE;
-        return 0;
+    private int getRottenTime(Block blockBelow) {
+        return RottenTumourUtils.getRottenTime(blockBelow);
     }
 
     public static VoxelShape makeShape() {

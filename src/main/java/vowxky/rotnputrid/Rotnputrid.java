@@ -9,11 +9,15 @@ import vowxky.rotnputrid.event.RottenGreatswordHandler;
 import vowxky.rotnputrid.item.RotnputridItemGroup;
 import vowxky.rotnputrid.item.RotnputridItems;
 import vowxky.rotnputrid.potion.RotnputridPotions;
+import vowxky.rotnputrid.util.RottenArmorUtils;
+import vowxky.rotnputrid.util.RottenTumourUtils;
 
 public class Rotnputrid implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        RottenTumourUtils.registerDefaults();
+        RottenArmorUtils.registerDefaults();
         RotnputridItems.register();
         RotnputridBlocks.register();
         RotnputridBlocksEntities.register();

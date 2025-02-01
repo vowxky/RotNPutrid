@@ -1,6 +1,10 @@
 package vowxky.rotnputrid.item.items;
 
+import com.google.common.collect.Multimap;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttribute;
+import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -31,4 +35,5 @@ public class RottenGreatSword extends SwordItem {
         }
         return super.postHit(stack, target, attacker);
     }
+
 }

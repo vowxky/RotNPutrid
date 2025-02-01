@@ -25,10 +25,7 @@ public class BlockBreakProtection {
         if (world instanceof ServerWorld) {
             BlockState aboveState = world.getBlockState(pos.up());
 
-            if (state.getBlock() instanceof RottenTumour ||
-                    (Util.isValidBlock(state.getBlock()) && aboveState.getBlock() instanceof RottenTumour)) {
-                return false;
-            }
+            return !Util.isValidBlock(state.getBlock()) || !(aboveState.getBlock() instanceof RottenTumour);
         }
         return true;
     }

@@ -32,7 +32,7 @@ public class ClientPlayerInteractionManagerMixin {
             ItemStack offHandStack = player.getOffHandStack();
 
             if (mainHandStack.getItem() == RotnputridItems.ROTTEN_GREATSWORD || offHandStack.getItem() == RotnputridItems.ROTTEN_GREATSWORD) {
-                float reach = (this.gameMode.isCreative() ? 5.0F : 4.5F) + 1.0F;
+                float reach = (this.gameMode.isCreative() ? 5.0F : 4.5F) + 0.5F;
                 cir.setReturnValue(reach);
             }
         }

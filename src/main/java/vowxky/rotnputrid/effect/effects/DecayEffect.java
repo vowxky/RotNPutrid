@@ -14,7 +14,7 @@ import vowxky.rotnputrid.effect.RotnputridEffects;
 public class DecayEffect extends StatusEffect {
 
     public DecayEffect() {
-        super(StatusEffectCategory.HARMFUL, 0x4B0082);
+        super(StatusEffectCategory.HARMFUL, 0x0E0102);
     }
 
     @Override

@@ -12,7 +12,7 @@ import vowxky.rotnputrid.effect.RotnputridEffects;
 
 public class PurityEffect extends StatusEffect {
     public PurityEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xFFD700);
+        super(StatusEffectCategory.BENEFICIAL, 0xFFEDC5);
     }
     @Override
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {

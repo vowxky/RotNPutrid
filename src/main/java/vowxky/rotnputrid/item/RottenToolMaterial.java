@@ -24,7 +24,7 @@ public enum RottenToolMaterial implements ToolMaterial {
 
     @Override
     public float getAttackDamage() {
-        return 1.5f;
+        return 2f;
     }
 
     @Override

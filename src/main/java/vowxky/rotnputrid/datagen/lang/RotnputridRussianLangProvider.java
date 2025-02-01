@@ -1,4 +1,4 @@
-package vowxky.rotnputrid.data.lang;
+package vowxky.rotnputrid.datagen.lang;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;

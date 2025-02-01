@@ -1,4 +1,4 @@
-package vowxky.rotnputrid.data;
+package vowxky.rotnputrid.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -48,7 +48,7 @@ public class RotnputridRecipesGenerator extends FabricRecipeProvider {
                 .pattern(" R ")
                 .pattern("RIR")
                 .pattern(" R ")
-                .input('I', Items.IRON_INGOT)
+                .input('I', Items.IRON_BLOCK)
                 .input('R', RotnputridItems.ROT_BOTTLE)
                 .criterion("has_iron_ingot", conditionsFromItem(Items.IRON_INGOT))
                 .criterion("has_rot_bottle", conditionsFromItem(RotnputridItems.ROT_BOTTLE))
