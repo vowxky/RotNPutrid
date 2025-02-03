@@ -19,11 +19,8 @@ import org.jetbrains.annotations.Nullable;
 import vowxky.rotnputrid.block.entity.RottenTumourBlockEntity;
 import vowxky.rotnputrid.effect.RotnputridEffects;
 import vowxky.rotnputrid.util.RottenTumourUtils;
-import vowxky.rotnputrid.util.Util;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 /**
  * This class was created by Vowxky.
@@ -38,7 +35,7 @@ public class RottenTumour extends BlockWithEntity implements BlockEntityProvider
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        return Util.isValidBlock(world.getBlockState(pos.down()).getBlock());
+        return RottenTumourUtils.isValidBlock(world.getBlockState(pos.down()).getBlock());
     }
 
     @Override

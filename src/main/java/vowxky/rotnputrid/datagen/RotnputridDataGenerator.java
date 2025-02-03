@@ -16,7 +16,6 @@ public class RotnputridDataGenerator implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
         FabricDataGenerator.Pack pack = generator.createPack();
         pack.addProvider(RotnputridRecipesGenerator::new);
-        pack.addProvider(RotnputridLootTableGenerator::new);
         pack.addProvider(RotnputridItemTagsGenerator::new);
         //lang
         pack.addProvider(RotnputridEnglishLangProvider::new);

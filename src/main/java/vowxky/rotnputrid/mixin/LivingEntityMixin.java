@@ -23,7 +23,7 @@ public abstract class LivingEntityMixin {
         LivingEntity entity = (LivingEntity) (Object) this;
 
         if (hasRottenArmor(entity) && entity.hasStatusEffect(RotnputridEffects.ROT_EFFECT) || entity.hasStatusEffect(RotnputridEffects.DECAY_EFFECT)) {
-            return MathHelper.floor(value * 0.5);
+            return MathHelper.floor(value * 0.75);
         }
         return MathHelper.floor(value);
     }

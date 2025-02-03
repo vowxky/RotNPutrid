@@ -53,5 +53,15 @@ public class RotnputridRecipesGenerator extends FabricRecipeProvider {
                 .criterion("has_iron_ingot", conditionsFromItem(Items.IRON_INGOT))
                 .criterion("has_rot_bottle", conditionsFromItem(RotnputridItems.ROT_BOTTLE))
                 .offerTo(consumer, Constant.id("rotten_tumour"));
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, RotnputridItems.ROT_BOTTLE)
+                .pattern("NNN")
+                .pattern("NTN")
+                .pattern("NNN")
+                .input('N', Items.NETHERRACK)
+                .input('T', Items.GLASS_BOTTLE)
+                .criterion("has_netherrack", conditionsFromItem(Items.NETHERRACK))
+                .criterion("has_thick_potion", conditionsFromItem(Items.GLASS_BOTTLE))
+                .offerTo(consumer, Constant.id("rot_bottle"));
     }
 }

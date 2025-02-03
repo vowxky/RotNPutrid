@@ -49,5 +49,12 @@ public class RotnputridSpanishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.minecraft.potion.effect.long_purity_potion", "Poción de Pureza Prolongada");
         translationBuilder.add("item.minecraft.splash_potion.effect.long_purity_potion", "Poción Arrojadiza de Pureza Prolongada");
         translationBuilder.add("item.minecraft.lingering_potion.effect.long_purity_potion", "Poción Persistente de Pureza Prolongada");
+
+        // Flechas con efectos
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.rot_potion", "Flecha de Putrefacción");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_rot_potion", "Flecha de Putrefacción Prolongada");
+
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.purity_potion", "Flecha de Pureza");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_purity_potion", "Flecha de Pureza Prolongada");
     }
 }

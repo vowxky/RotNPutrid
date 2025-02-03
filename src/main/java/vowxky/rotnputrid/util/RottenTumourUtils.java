@@ -2,6 +2,7 @@ package vowxky.rotnputrid.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import vowxky.rotnputrid.Constant;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,6 +16,10 @@ public class RottenTumourUtils {
     private static final Map<Block, RottenEffectData> ROTTEN_EFFECTS = new HashMap<>();
 
     public static void registerRottenBlock(Block block, int duration, int range) {
+        if (ROTTEN_EFFECTS.containsKey(block)) {
+            Constant.LOGGER.warn("Block {} is already registered and will not be overwritten.", block);
+            return;
+        }
         ROTTEN_EFFECTS.put(block, new RottenEffectData(duration, range));
     }
 
@@ -24,6 +29,10 @@ public class RottenTumourUtils {
 
     public static int getRottenTime(Block block) {
         return ROTTEN_EFFECTS.getOrDefault(block, new RottenEffectData(0, 0)).getDuration();
+    }
+
+    public static boolean isValidBlock(Block block) {
+        return ROTTEN_EFFECTS.containsKey(block);
     }
 
     public static void registerDefaults() {

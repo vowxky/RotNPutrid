@@ -17,7 +17,7 @@ public class RotnputridItems {
             new RottenGreatSword(
                     RottenToolMaterial.INSTANCE,
                     5,
-                    -2.8f,
+                    -2.9f,
                     new FabricItemSettings().maxCount(1).fireproof()
     ));
     public static final Item PUTRID_NETHERITE_INGOT = registerItem("putrid_netherite_ingot", new Item(new Item.Settings()));

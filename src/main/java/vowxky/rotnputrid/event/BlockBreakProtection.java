@@ -8,7 +8,7 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import vowxky.rotnputrid.block.blocks.RottenTumour;
-import vowxky.rotnputrid.util.Util;
+import vowxky.rotnputrid.util.RottenTumourUtils;
 
 /**
  * This class was created by Vowxky.
@@ -25,7 +25,7 @@ public class BlockBreakProtection {
         if (world instanceof ServerWorld) {
             BlockState aboveState = world.getBlockState(pos.up());
 
-            return !Util.isValidBlock(state.getBlock()) || !(aboveState.getBlock() instanceof RottenTumour);
+            return !RottenTumourUtils.isValidBlock(state.getBlock()) || !(aboveState.getBlock() instanceof RottenTumour);
         }
         return true;
     }

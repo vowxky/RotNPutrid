@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
-import org.jetbrains.annotations.Nullable;
 import vowxky.rotnputrid.Constant;
 import vowxky.rotnputrid.item.RotnputridItems;
 

@@ -49,5 +49,12 @@ public class RotnputridRussianLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.minecraft.potion.effect.long_purity_potion", "Долгое зелье чистоты");
         translationBuilder.add("item.minecraft.splash_potion.effect.long_purity_potion", "Долгое взрывное зелье чистоты");
         translationBuilder.add("item.minecraft.lingering_potion.effect.long_purity_potion", "Долгое долговременное зелье чистоты");
+
+        // Стрелы с эффектами
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.rot_potion", "Стрела гниения");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_rot_potion", "Стрела длительного гниения");
+
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.purity_potion", "Стрела чистоты");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_purity_potion", "Стрела длительной чистоты");
     }
 }

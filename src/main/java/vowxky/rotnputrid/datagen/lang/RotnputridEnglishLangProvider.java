@@ -49,5 +49,12 @@ public class RotnputridEnglishLangProvider extends FabricLanguageProvider {
         translationBuilder.add("item.minecraft.potion.effect.long_purity_potion", "Potion of Extended Purity");
         translationBuilder.add("item.minecraft.splash_potion.effect.long_purity_potion", "Splash Potion of Extended Purity");
         translationBuilder.add("item.minecraft.lingering_potion.effect.long_purity_potion", "Lingering Potion of Extended Purity");
+
+        // Tipped Arrows
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.rot_potion", "Arrow of Rotting");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_rot_potion", "Arrow of Extended Rotting");
+
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.purity_potion", "Arrow of Purity");
+        translationBuilder.add("item.minecraft.tipped_arrow.effect.long_purity_potion", "Arrow of Extended Purity");
     }
 }
