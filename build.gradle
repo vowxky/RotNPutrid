@@ -84,15 +84,31 @@ tasks.named("remapJar") {
     archiveFileName.set("${project.archives_base_name}-${project.minecraft_version}-${project.mod_version}.jar")
 }
 
+tasks.register("deobfJar", Jar) {
+    archiveClassifier.set("deobf")
+    from sourceSets.main.output
+}
+
 // configure the maven publication
 publishing {
     publications {
         create("mavenJava", MavenPublication) {
             artifactId = "${project.archives_base_name}-${project.minecraft_version}-${project.mod_version}"
             from components.java
+
+            artifact(tasks.named("jar")) {
+                classifier = "fabric"
+            }
+
+            artifact(tasks.named("deobfJar")) {
+                classifier = "deobf"
+            }
+
+            artifact(tasks.named("sourcesJar")) {
+                classifier = "sources"
+            }
         }
     }
-
 
     repositories {
         maven {
@@ -101,7 +117,6 @@ publishing {
         }
     }
 }
-
 fabricApi {
     configureDataGeneration()
 }
