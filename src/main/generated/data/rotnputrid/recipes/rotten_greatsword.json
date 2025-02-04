@@ -1,15 +1,12 @@
 {
-  "type": "minecraft:smithing_transform",
+  "type": "minecraft:smithing",
   "addition": {
-    "item": "minecraft:netherite_sword"
+    "item": "rotnputrid:putrid_netherite_ingot"
   },
   "base": {
-    "item": "rotnputrid:putrid_netherite_ingot"
+    "item": "minecraft:netherite_sword"
   },
   "result": {
     "item": "rotnputrid:rotten_greatsword"
-  },
-  "template": {
-    "item": "rotnputrid:putrid_upgrade_template"
   }
 }

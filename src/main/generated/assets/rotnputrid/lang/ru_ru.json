@@ -24,5 +24,5 @@
   "item.rotnputrid.putrid_upgrade_template": "Шаблон гнилого улучшения",
   "item.rotnputrid.rot_bottle": "Бутылка гнили",
   "item.rotnputrid.rotten_greatsword": "Гнилой двуручный меч",
-  "itemGroup.rotnputrid": "Гнилостная гниль"
+  "itemGroup.rotnputrid.rotnputrid": "Гнилостная гниль"
 }

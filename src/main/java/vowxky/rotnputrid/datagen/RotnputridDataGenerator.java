@@ -14,12 +14,11 @@ import vowxky.rotnputrid.datagen.lang.RotnputridSpanishLangProvider;
 public class RotnputridDataGenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
-        FabricDataGenerator.Pack pack = generator.createPack();
-        pack.addProvider(RotnputridRecipesGenerator::new);
-        pack.addProvider(RotnputridItemTagsGenerator::new);
+        generator.addProvider(RotnputridRecipesGenerator::new);
+        generator.addProvider(RotnputridItemTagsGenerator::new);
         //lang
-        pack.addProvider(RotnputridEnglishLangProvider::new);
-        pack.addProvider(RotnputridSpanishLangProvider::new);
-        pack.addProvider(RotnputridRussianLangProvider::new);
+        generator.addProvider(RotnputridEnglishLangProvider::new);
+        generator.addProvider(RotnputridSpanishLangProvider::new);
+        generator.addProvider(RotnputridRussianLangProvider::new);
     }
 }

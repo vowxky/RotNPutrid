@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "misc",
   "key": {
     "N": {
       "item": "minecraft:netherrack"
@@ -16,6 +15,5 @@
   ],
   "result": {
     "item": "rotnputrid:rot_bottle"
-  },
-  "show_notification": true
+  }
 }

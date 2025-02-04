@@ -1,6 +1,7 @@
 package vowxky.rotnputrid.effect.effects;
 
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import vowxky.rotnputrid.effect.RotnputridEffects;
@@ -20,7 +21,7 @@ public class DecayEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (!entity.getWorld().isClient()) {
             if (entity.age % 40 == 0) {
-                entity.damage(entity.getDamageSources().magic(), 2.0F);
+                entity.damage(DamageSource.MAGIC, 2.0F);
             }
         }
 

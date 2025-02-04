@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_netherite_ingot": {
+    "has_glass_bottle": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:netherite_ingot"
+              "minecraft:glass_bottle"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_rot_bottle": {
+    "has_netherrack": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rotnputrid:rot_bottle"
+              "minecraft:netherrack"
             ]
           }
         ]
@@ -27,22 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rotnputrid:putrid_netherite_ingot"
+        "recipe": "rotnputrid:rot_bottle"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_netherite_ingot",
-      "has_rot_bottle",
+      "has_netherrack",
+      "has_glass_bottle",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rotnputrid:putrid_netherite_ingot"
+      "rotnputrid:rot_bottle"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

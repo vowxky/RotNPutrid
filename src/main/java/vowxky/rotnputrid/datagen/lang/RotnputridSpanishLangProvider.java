@@ -1,6 +1,6 @@
 package vowxky.rotnputrid.datagen.lang;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 /**
@@ -9,13 +9,15 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
  */
 
 public class RotnputridSpanishLangProvider extends FabricLanguageProvider {
-    public RotnputridSpanishLangProvider(FabricDataOutput dataOutput) {
-        super(dataOutput, "es_es");
+
+
+    public RotnputridSpanishLangProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, "es_es");
     }
 
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
-        translationBuilder.add("itemGroup.rotnputrid", "Rot N' Putrid");
+        translationBuilder.add("itemGroup.rotnputrid.rotnputrid", "Rot N' Putrid");
 
         // Ítems
         translationBuilder.add("item.rotnputrid.rotten_greatsword", "Espada Putrefacta");

@@ -1,6 +1,6 @@
 package vowxky.rotnputrid.datagen.lang;
 
-import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 
 /**
@@ -9,13 +9,13 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
  */
 
 public class RotnputridRussianLangProvider extends FabricLanguageProvider {
-    public RotnputridRussianLangProvider(FabricDataOutput dataOutput) {
-        super(dataOutput, "ru_ru");
+    public RotnputridRussianLangProvider(FabricDataGenerator dataGenerator) {
+        super(dataGenerator, "ru_ru");
     }
 
     @Override
     public void generateTranslations(TranslationBuilder translationBuilder) {
-        translationBuilder.add("itemGroup.rotnputrid", "Гнилостная гниль");
+        translationBuilder.add("itemGroup.rotnputrid.rotnputrid", "Гнилостная гниль");
 
         // Предметы
         translationBuilder.add("item.rotnputrid.rotten_greatsword", "Гнилой двуручный меч");

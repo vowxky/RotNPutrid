@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_iron_ingot": {
+    "has_netherite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_ingot"
+              "minecraft:netherite_ingot"
             ]
           }
         ]
@@ -27,22 +27,21 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "rotnputrid:rotten_tumour"
+        "recipe": "rotnputrid:putrid_netherite_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_iron_ingot",
+      "has_netherite_ingot",
       "has_rot_bottle",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "rotnputrid:rotten_tumour"
+      "rotnputrid:putrid_netherite_ingot"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

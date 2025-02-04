@@ -1,24 +1,24 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_putrid_netherite_ingot": {
+    "has_netherite_sword": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rotnputrid:putrid_netherite_ingot"
+              "minecraft:netherite_sword"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_putrid_upgrade_template": {
+    "has_putrid_netherite_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "rotnputrid:putrid_upgrade_template"
+              "rotnputrid:putrid_netherite_ingot"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_putrid_netherite_ingot",
-      "has_putrid_upgrade_template",
+      "has_netherite_sword",
       "has_the_recipe"
     ]
   ],
@@ -43,6 +43,5 @@
     "recipes": [
       "rotnputrid:rotten_greatsword"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

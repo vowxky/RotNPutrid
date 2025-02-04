@@ -2,8 +2,7 @@ package vowxky.rotnputrid.block.entity;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
+import net.minecraft.util.registry.Registry;
 import vowxky.rotnputrid.Constant;
 import vowxky.rotnputrid.block.RotnputridBlocks;
 
@@ -14,7 +13,7 @@ import vowxky.rotnputrid.block.RotnputridBlocks;
 
 public class RotnputridBlocksEntities {
     public static final BlockEntityType<RottenTumourBlockEntity> ROTTEN_TUMOUR_BLOCK_ENTITY =
-            Registry.register(Registries.BLOCK_ENTITY_TYPE, Constant.id("rotten_tumour_block_entity"),
+            Registry.register(Registry.BLOCK_ENTITY_TYPE, Constant.id("rotten_tumour_block_entity"),
                     FabricBlockEntityTypeBuilder.create(RottenTumourBlockEntity::new,
                             RotnputridBlocks.ROTTEN_TUMOUR).build());
 
